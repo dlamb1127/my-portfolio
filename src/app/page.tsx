@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, MouseEvent } from "react"; // <- notice MouseEvent imported here
+import React, { useState, useEffect, MouseEvent } from "react";
 import Head from "next/head";
 import { motion } from "framer-motion";
 import { FaJs, FaReact, FaNodeJs, FaAws, FaDocker, FaPython, FaDatabase, FaGitAlt, FaEnvelope, FaLinkedin, FaGithub, FaJava, FaHtml5, FaCode, FaCss3Alt } from "react-icons/fa";
@@ -17,19 +17,16 @@ export default function Home() {
       setScrollProgress(progress);
     };
 
-    const handleMouseMove = (e: MouseEvent<HTMLDivElement>) => {
+    const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
 
     window.addEventListener("scroll", handleScroll);
-    window.addEventListener("mousemove", (e) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    });
+    window.addEventListener("mousemove", handleMouseMove);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("mousemove", (e) => {
-        setMousePosition({ x: e.clientX, y: e.clientY });
-      });
+      window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
 
