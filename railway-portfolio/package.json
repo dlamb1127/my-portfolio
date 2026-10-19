@@ -1,0 +1,7 @@
+{
+  "name": "dustin-lambert-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "scripts": { "start": "node server.js" },
+  "engines": { "node": ">=20" }
+}
