@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Professional portfolio for Dustin Lambert — operations leadership, safety, technology, and continuous improvement." />
+  <title>Dustin Lambert | Operations Leader</title>
+  <style>
+    :root{
+      --bg:#08111f;
+      --panel:#0f1d31;
+      --panel2:#13253e;
+      --text:#f4f7fb;
+      --muted:#aebbcf;
+      --accent:#4db6ff;
+      --accent2:#78e2b4;
+      --line:rgba(255,255,255,.10);
+      --shadow:0 20px 60px rgba(0,0,0,.28);
+      --radius:22px;
+      --max:1140px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(77,182,255,.16), transparent 35%),
+        radial-gradient(circle at 85% 10%, rgba(120,226,180,.10), transparent 30%),
+        var(--bg);
+      line-height:1.6;
+    }
+    a{color:inherit}
+    .container{width:min(92%,var(--max));margin:auto}
+    nav{
+      position:sticky;top:0;z-index:20;
+      backdrop-filter:blur(14px);
+      background:rgba(8,17,31,.78);
+      border-bottom:1px solid var(--line);
+    }
+    .nav-inner{
+      min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:20px;
+    }
+    .brand{font-weight:800;letter-spacing:.3px;text-decoration:none}
+    .brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:24px;flex-wrap:wrap}
+    .nav-links a{font-size:.94rem;text-decoration:none;color:var(--muted)}
+    .nav-links a:hover{color:var(--text)}
+    .hero{
+      min-height:82vh;display:grid;place-items:center;padding:80px 0 60px;
+    }
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .eyebrow{
+      display:inline-flex;gap:8px;align-items:center;
+      border:1px solid rgba(77,182,255,.25);
+      background:rgba(77,182,255,.08);
+      padding:8px 12px;border-radius:999px;color:#cfeeff;font-size:.9rem;font-weight:700;
+    }
+    h1{
+      font-size:clamp(3rem,7vw,6.8rem);line-height:.94;margin:22px 0 18px;letter-spacing:-.055em;
+    }
+    h1 .accent{color:var(--accent)}
+    .hero p{font-size:1.2rem;color:var(--muted);max-width:760px}
+    .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+    .btn{
+      text-decoration:none;padding:13px 18px;border-radius:14px;font-weight:800;
+      display:inline-flex;align-items:center;justify-content:center;border:1px solid transparent;
+    }
+    .btn-primary{background:linear-gradient(135deg,var(--accent),#6d8cff);color:#05111e}
+    .btn-secondary{border-color:var(--line);background:rgba(255,255,255,.035)}
+    .hero-card,.card,.timeline-item,.metric,.project{
+      background:linear-gradient(180deg,rgba(255,255,255,.055),rgba(255,255,255,.025));
+      border:1px solid var(--line);box-shadow:var(--shadow);border-radius:var(--radius);
+    }
+    .hero-card{padding:28px}
+    .monogram{
+      width:94px;height:94px;border-radius:24px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));
+      color:#06121f;font-size:2rem;font-weight:900;margin-bottom:22px;
+    }
+    .hero-card h3{margin:0 0 8px;font-size:1.4rem}
+    .hero-card p{font-size:1rem;margin:0 0 20px}
+    .quick-list{display:grid;gap:12px}
+    .quick-item{
+      display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-top:1px solid var(--line)
+    }
+    .quick-item span:first-child{color:var(--muted)}
+    section{padding:88px 0}
+    .section-head{max-width:760px;margin-bottom:34px}
+    .kicker{color:var(--accent);font-weight:800;text-transform:uppercase;letter-spacing:.14em;font-size:.8rem}
+    h2{font-size:clamp(2rem,4vw,3.6rem);line-height:1.04;margin:10px 0 14px;letter-spacing:-.04em}
+    .section-head p{color:var(--muted);font-size:1.08rem}
+    .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:24px}
+    .card{padding:28px}
+    .card h3{margin-top:0}
+    .pill-wrap{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{padding:9px 12px;border-radius:999px;background:rgba(120,226,180,.08);border:1px solid rgba(120,226,180,.18);color:#d6ffed;font-weight:700;font-size:.9rem}
+    .metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .metric{padding:22px}
+    .metric strong{display:block;font-size:2rem;line-height:1;color:var(--accent2);margin-bottom:8px}
+    .metric span{color:var(--muted)}
+    .timeline{display:grid;gap:16px}
+    .timeline-item{padding:26px}
+    .timeline-item .meta{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:.92rem}
+    .timeline-item h3{margin:6px 0 8px;font-size:1.3rem}
+    .timeline-item ul{margin:12px 0 0;padding-left:20px;color:var(--muted)}
+    .projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .project{padding:24px}
+    .project .num{font-size:.82rem;color:var(--accent);font-weight:900;letter-spacing:.12em}
+    .project h3{margin:10px 0 9px}
+    .project p{color:var(--muted);margin:0}
+    .education-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .education-grid .card p{color:var(--muted)}
+    .contact{
+      padding:46px;border-radius:32px;
+      background:linear-gradient(135deg,rgba(77,182,255,.16),rgba(120,226,180,.10));
+      border:1px solid var(--line);
+      display:grid;grid-template-columns:1fr auto;gap:24px;align-items:center;
+    }
+    .contact h2{margin-top:0}
+    .contact p{color:var(--muted);max-width:720px}
+    footer{padding:34px 0 46px;color:var(--muted);border-top:1px solid var(--line)}
+    .small{font-size:.9rem}
+    @media (max-width:900px){
+      .hero-grid,.about-grid,.contact{grid-template-columns:1fr}
+      .metrics{grid-template-columns:repeat(2,1fr)}
+      .projects,.education-grid{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .hero{min-height:auto;padding-top:70px}
+    }
+    @media (max-width:520px){
+      .metrics{grid-template-columns:1fr}
+      section{padding:64px 0}
+      .hero-card,.card,.timeline-item,.metric,.project{border-radius:18px}
+      .contact{padding:28px}
+    }
+    .menu-toggle{display:none;color:var(--text);background:transparent;border:1px solid var(--line);padding:10px 15px;border-radius:8px;font:inherit}
+    .education-grid{grid-template-columns:repeat(2,1fr)}
+    .credentials{color:var(--muted);margin-top:28px}.credentials span{margin:0 12px;color:var(--accent)}
+    section[id]{scroll-margin-top:90px}a:focus-visible,button:focus-visible{outline:3px solid var(--accent2);outline-offset:5px}
+    .skip{position:absolute;top:-100px;left:16px;padding:12px;background:var(--panel);z-index:99}.skip:focus{top:10px}
+    .contact .btn{white-space:nowrap}.quick-item strong{text-align:right}.hero h1{font-size:clamp(3rem,6vw,5.8rem);line-height:1.05}
+    @media(max-width:900px){.menu-toggle{display:block}.nav-inner{position:relative}.nav-links.open{display:flex;position:absolute;top:72px;left:0;right:0;background:var(--panel);padding:20px;flex-direction:column;border:1px solid var(--line)}}
+    @media(max-width:520px){.education-grid{grid-template-columns:1fr}.quick-item{flex-wrap:wrap}.hero{padding-top:45px}.hero-grid{gap:28px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  
+/* Corporate portfolio refinement */
+:root{--bg:#f5f7f8;--panel:#fff;--panel2:#edf2f4;--text:#193345;--muted:#526572;--accent:#176477;--accent2:#176477;--line:#d6dfe4;--shadow:none;--radius:6px;--max:1120px}
+body{background:var(--bg);font-family:"Segoe UI",Arial,sans-serif}
+nav{background:rgba(255,255,255,.97)}
+.hero{min-height:auto;padding:85px 0 65px;background:#fff;border-bottom:1px solid var(--line)}
+h1{font-size:clamp(3.4rem,7vw,6rem);font-weight:750;letter-spacing:-.055em}
+h2{font-size:clamp(2rem,4vw,3rem);font-weight:650;line-height:1.12}
+.eyebrow{color:var(--accent);border:0;background:#eaf2f4;border-radius:3px}
+.hero-card,.card,.timeline-item,.metric,.project{background:#fff;border-radius:6px;box-shadow:none}
+.hero-card{border-top:4px solid var(--accent)}
+.monogram{background:#17354a;color:white;border-radius:4px}
+.btn{border-radius:4px;font-weight:650}.btn-primary{background:#176477;color:#fff}.btn-secondary{background:#fff;border-color:#b8c7d0}
+.pill{background:#edf4f5;border-color:#cbdde0;color:#205366;border-radius:3px}
+section{padding:64px 0}.projects{grid-template-columns:repeat(2,1fr)}
+.project .num{color:var(--accent)}.metric{border:0;border-left:3px solid #176477;border-radius:0}
+.metric strong{font-size:2.5rem}.contact{background:#e8eff2;border:1px solid var(--line);border-radius:6px}
+a:focus-visible,button:focus-visible{outline:3px solid #b57925;outline-offset:4px}
+@media(max-width:760px){.projects{grid-template-columns:1fr}.hero{padding:48px 0}.hero-grid{gap:28px}.quick-item{flex-wrap:wrap}.nav-links{background:white}section{padding:44px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body><a class="skip" href="#top">Skip to content</a>
+  <nav>
+    <div class="container nav-inner">
+      <a class="brand" href="#top">Dustin <span>Lambert</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="site-menu">Menu</button><div class="nav-links" id="site-menu">
+        <a href="#about">About</a>
+        <a href="#impact">Impact</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">HOUMA, LOUISIANA · OPERATIONS LEADERSHIP</div>
+          <h1>Lead people.<br>Improve the <span class="accent">operation.</span></h1>
+          <p>
+            I’m Dustin Lambert. I lead eight employees and oversee daily branch operations, bringing 15+ years of field experience,
+            a strong safety mindset, and a computer science background. I focus on practical
+            execution: improving service, developing people, solving operational problems,
+            and turning ideas into repeatable systems.
+          </p>
+          <div class="cta-row">
+            <a class="btn btn-primary" href="#experience">View Experience</a>
+            <a class="btn btn-secondary" href="resume.pdf" download>Download Résumé <span aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="monogram">DL</div>
+          <h3>Dustin Lambert</h3>
+          <p>People leadership, route operations, safety coaching, KPI improvement, process design, and technology-enabled problem solving.</p>
+          <div class="quick-list">
+            <div class="quick-item"><span>Experience</span><strong>15+ years</strong></div>
+            <div class="quick-item"><span>Current role</span><strong>Operations Team Lead</strong></div><div class="quick-item"><span>In role since</span><strong>February 2026</strong></div>
+            <div class="quick-item"><span>Technical degree</span><strong>B.S. Computer Science</strong></div>
+            <div class="quick-item"><span>Training</span><strong>Smith System certified</strong></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">About</div>
+          <h2>Field-tested leadership with a systems mindset.</h2>
+          <p>
+            My background sits at the intersection of operations, safety, customer service,
+            leadership, and technology. I enjoy getting close to the work, understanding
+            what slows teams down, and creating solutions that are simple enough to use every day.
+          </p>
+        </div>
+        <div class="about-grid">
+          <div class="card">
+            <h3>What I bring</h3>
+            <p>
+              I’ve grown from frontline route work into operations leadership while taking on
+              broader responsibilities across service, safety, people development, inventory,
+              process improvement, and branch performance. I’m comfortable leading from the floor
+              and translating problems into clear actions.
+            </p>
+          </div>
+          <div class="card">
+            <h3>Core strengths</h3>
+            <div class="pill-wrap">
+              <span class="pill">Operations Leadership</span>
+              <span class="pill">Safety Coaching</span>
+              <span class="pill">KPI Management</span>
+              <span class="pill">Route Operations</span>
+              <span class="pill">Process Improvement</span>
+              <span class="pill">Team Development</span>
+              <span class="pill">Data & Reporting</span>
+              <span class="pill">Technology Adoption</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="impact">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Impact</div>
+          <h2>Leadership in action.</h2>
+          <p>Leading eight employees through the merger, with a focus on customer schedules, new systems, and consistent daily execution.</p>
+        </div>
+        <div class="metrics">
+          <div class="card"><h3>Develop people</h3><p>Lead eight employees and support systems training across four branches through guided practice and follow-up coaching.</p></div>
+          <div class="card"><h3>Engage teams in safety</h3><p>Conduct regular CQD activities and practical discussions that connect hazard awareness to daily driving.</p></div>
+          <div class="card"><h3>Resolve customer concerns</h3><p>Coordinate account corrections, recover outstanding balances, and help customers reestablish service.</p></div>
+          <div class="card"><h3>Improve daily processes</h3><p>Build useful inventory tools and align delivery schedules with customer needs.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Experience</div>
+          <h2>Leadership built from the front line up.</h2>
+        </div>
+        <div class="timeline">
+          <article class="timeline-item">
+            <div class="meta"><span>Primo Brands / Water Operations</span><span>Operations Team Lead · February 2026–present</span></div>
+            <h3>Branch Operations & Team Leadership</h3>
+            <ul>
+              <li>Lead eight employees and coordinate daily service, safety, staffing, warehouse, and inventory activities. Work with district and regional leaders on decisions requiring formal approval.</li>
+              <li>Coach route teams on safe driving, following distance, backing, stop compliance, ergonomics, and field execution.</li>
+              <li>Use scorecards, visual management, contests, and targeted follow-up to improve route and sales performance.</li>
+              <li>Travel to other branches to assist with inventory and help DOMs and OTLs troubleshoot system issues.</li>
+            </ul>
+          </article>
+
+          <article class="timeline-item">
+            <div class="meta"><span>Route Operations</span><span>Route Specialist · 2018–February 2026</span></div>
+            <h3>Customer Service, Route Execution & Process Knowledge</h3>
+            <ul>
+              <li>Developed deep firsthand knowledge of route sequencing, customer expectations, delivery constraints, vehicle operation, and field productivity.</li>
+              <li>Helped identify practical routing and optimization gaps in complex service areas involving bayous, dead ends, large commercial sites, and access constraints.</li>
+              <li>Turned field observations into proposals, training, and process improvements for leadership review.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Selected Projects</div>
+          <h2>Ideas turned into tools, programs, and action.</h2>
+        </div>
+        <div class="projects"><article class="project"><div class="num">01 / PEOPLE DEVELOPMENT</div><h3>Build confidence through practice</h3><p>I support approximately six to seven employees across New Orleans, Slidell, Gulfport, and Patterson. I demonstrate the process, provide training resources, then coach employees as they do the work themselves. Some now work independently; others benefit from continued support.</p></article>
+<article class="project"><div class="num">02 / SAFETY LEADERSHIP</div><h3>Make hazards visible</h3><p>I conduct several CQD activities each month. In our stationary and moving SCAN 6 exercises, everyone identified the objects, but scanning took longer than anticipated. A child image near a tire made the discussion especially meaningful. Houma has received periodic recognition on safety calls for consistent participation.</p></article>
+<article class="project"><div class="num">03 / CUSTOMER RECOVERY</div><h3>Follow through across accounts</h3><p>I partnered with a support agent to resolve inconsistent billing and pricing across a customer’s accounts, clarify tax differences, and align the pricing structure. I followed up on the resolution and recognized the agent to her supervisors.</p></article>
+<article class="project"><div class="num">04 / INVENTORY CONTROL</div><h3>Act before products expire</h3><p>I built an expiration inventory tracker to make approaching dates easier to monitor. We use it to guide targeted promotions with the goal of controlling write-offs and keeping inventory moving.</p></article>
+<article class="project"><div class="num">05 / ROUTE OPERATIONS</div><h3>Match schedules to customer needs</h3><p>I coached drivers to identify customers whose delivery frequency did not match consumption. Drivers escalated those accounts to me, and I updated the system, including moving some customers from every two weeks to every four weeks. We also explained the new service standards.</p></article>
+<article class="project"><div class="num">06 / ACCOUNT RECOVERY</div><h3>Recover balances and restore service</h3><p>I contact customers with past-due accounts, have collected previously written-off balances, and help customers reestablish service. My approach combines clear communication, follow-through, and a practical path back to service.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-head">
+          <div class="kicker">Education</div>
+          <h2>Operations experience backed by technical education.</h2>
+        </div>
+        <div class="education-grid">
+          <div class="card"><h3>B.S. Computer Science</h3><p>Southern New Hampshire University<br>2024 · Summa cum laude</p></div>
+          <div class="card"><h3>B.S. Family and Consumer Sciences</h3><p>Nicholls State University<br>2015</p></div>
+          <div class="card"><h3>A.S. Safety Technology</h3><p>Nicholls State University<br>2015</p></div>
+          <div class="card"><h3>A.S. Process Technology</h3><p>Coastline College<br>2018</p></div>
+        </div>
+        <p class="credentials">Smith System Certified Trainer <span>·</span> OSHA 30 <span>·</span> Class B CDL with Air Brakes</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="contact">
+          <div>
+            <div class="kicker">Next Step</div>
+            <h2>Ready for broader operational leadership.</h2>
+            <p>
+              I’m especially interested in opportunities where I can combine people leadership,
+              frontline credibility, operational discipline, safety, and technology to improve
+              performance across a branch, district, or multi-site operation.
+            </p>
+          </div>
+          <a class="btn btn-primary" href="mailto:dustinlambert1127@yahoo.com">Contact Me</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container small">
+      © <span id="year"></span> Dustin Lambert. Built as a professional portfolio.
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const toggle=document.querySelector('.menu-toggle'), menu=document.querySelector('.nav-links');
+    toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')!=='true';toggle.setAttribute('aria-expanded',String(open));menu.classList.toggle('open',open)});
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
+  </script>
+</body>
+</html>
